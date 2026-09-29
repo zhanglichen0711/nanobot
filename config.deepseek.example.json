@@ -1,0 +1,26 @@
+{
+  "//": "nanobot 中文改造版：DeepSeek provider 配置模板。用法：把下面三个键的内容合并进 ~/.nanobot/config.json（保留你已有的其他配置）。API Key 走环境变量 DEEPSEEK_API_KEY，不写死在文件里。",
+
+  "providers": {
+    "deepseek": {
+      "apiKey": "${DEEPSEEK_API_KEY}",
+      "apiBase": "https://api.deepseek.com/v1"
+    }
+  },
+
+  "modelPresets": {
+    "primary": {
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "maxTokens": 4096,
+      "contextWindowTokens": 131072,
+      "temperature": 0.1
+    }
+  },
+
+  "agents": {
+    "defaults": {
+      "modelPreset": "primary"
+    }
+  }
+}
